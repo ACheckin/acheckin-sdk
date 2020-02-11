@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "alwaysStrict": false,
+    "module": "commonjs",
+    "target": "es5",
+    "noImplicitAny": false,
+    "moduleResolution": "node",
+    "strictNullChecks": false,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "sourceMap": false,
+    "outDir": "lib",
+    "baseUrl": ".",
+    "declaration": true,
+    "removeComments": true,
+    "allowJs": false,
+    "lib": [
+      "dom",
+      "es2017",
+      "es2015",
+      "es2016",
+      "esnext"
+    ]
+  },
+  "include": [
+    "src"
+  ]
+}
