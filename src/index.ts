@@ -4,7 +4,7 @@ interface UserInfo {
 	picture: string;
 	email: string;
 	birthday: string;
-	gender: "F" | "M";
+	gender: 'F' | 'M';
 }
 
 export interface UserPersonalInfo extends UserInfo {
@@ -12,9 +12,6 @@ export interface UserPersonalInfo extends UserInfo {
 }
 
 export interface UserWorkspaceInfo extends UserInfo {
-	identity_card_number: string;
-	identity_place: string;
-	identity_date: string;
 	is_owner: boolean;
 }
 
@@ -56,24 +53,24 @@ class ACheckinSDK {
 	static sdk_ready = false;
 
 	static init(options: ACheckinSDKOptions = {}) {
-		if (typeof window.ACheckin.handleSDK !== "function") {
-			throw new Error("Bạn phải sử dụng sdk trong ứng dụng ACheckin");
+		if (typeof window.ACheckin.handleSDK !== 'function') {
+			throw new Error('Bạn phải sử dụng sdk trong ứng dụng ACheckin');
 		}
 
 		ACheckinSDK.sdk_ready = true;
 
-		window.ACheckin.handleSDK("init", {
+		window.ACheckin.handleSDK('init', {
 			fields: {
 				title: options.title || null,
 				use_search_bar: options.use_search_bar || false,
-				default_navigation_id: options.default_navigation_id || null
-			}
+				default_navigation_id: options.default_navigation_id || null,
+			},
 		}).catch();
 	}
 
 	static validInitSDK() {
 		if (!ACheckinSDK.sdk_ready) {
-			throw new Error("SDK chưa được khởi tạo, vui lòng gọi init()");
+			throw new Error('SDK chưa được khởi tạo, vui lòng gọi init()');
 		}
 	}
 
@@ -84,10 +81,10 @@ class ACheckinSDK {
 	static setHeaderTitle(title: string) {
 		ACheckinSDK.validInitSDK();
 
-		return window.ACheckin.handleSDK("setHeaderTitle", {
+		return window.ACheckin.handleSDK('setHeaderTitle', {
 			fields: {
-				title: title
-			}
+				title: title,
+			},
 		});
 	}
 
@@ -97,7 +94,7 @@ class ACheckinSDK {
 	static getAccessToken() {
 		ACheckinSDK.validInitSDK();
 
-		return window.ACheckin.handleSDK("getAccessToken");
+		return window.ACheckin.handleSDK('getAccessToken');
 	}
 
 	/**
@@ -107,8 +104,8 @@ class ACheckinSDK {
 	static getUserPersonalInfo(fields: Array<keyof UserPersonalInfo>): Promise<UserPersonalInfo> {
 		ACheckinSDK.validInitSDK();
 
-		return window.ACheckin.handleSDK("getUserPersonalInfo", {
-			fields
+		return window.ACheckin.handleSDK('getUserPersonalInfo', {
+			fields,
 		});
 	}
 
@@ -119,8 +116,8 @@ class ACheckinSDK {
 	static getUserWorkspaceInfo(fields: Array<keyof UserWorkspaceInfo>): Promise<UserWorkspaceInfo> {
 		ACheckinSDK.validInitSDK();
 
-		return window.ACheckin.handleSDK("getUserWorkspaceInfo", {
-			fields
+		return window.ACheckin.handleSDK('getUserWorkspaceInfo', {
+			fields,
 		});
 	}
 
@@ -132,9 +129,9 @@ class ACheckinSDK {
 	static setItem(key: string, value: string): Promise<boolean> {
 		ACheckinSDK.validInitSDK();
 
-		return window.ACheckin.handleSDK("setItem", {
+		return window.ACheckin.handleSDK('setItem', {
 			key,
-			value
+			value,
 		});
 	}
 
@@ -145,8 +142,8 @@ class ACheckinSDK {
 	static getItem(key: string): Promise<string> {
 		ACheckinSDK.validInitSDK();
 
-		return window.ACheckin.handleSDK("getItem", {
-			key
+		return window.ACheckin.handleSDK('getItem', {
+			key,
 		});
 	}
 
@@ -157,8 +154,8 @@ class ACheckinSDK {
 	static getDeviceInfo(fields: Array<keyof DeviceInfo>): Promise<DeviceInfo> {
 		ACheckinSDK.validInitSDK();
 
-		return window.ACheckin.handleSDK("getDeviceInfo", {
-			fields
+		return window.ACheckin.handleSDK('getDeviceInfo', {
+			fields,
 		});
 	}
 
@@ -168,7 +165,7 @@ class ACheckinSDK {
 	static readBarCode(): Promise<string> {
 		ACheckinSDK.validInitSDK();
 
-		return window.ACheckin.handleSDK("readBarCode");
+		return window.ACheckin.handleSDK('readBarCode');
 	}
 
 	/**
@@ -180,10 +177,10 @@ class ACheckinSDK {
 			callback(data.detail);
 		};
 
-		window.addEventListener("ACheckin.NavigationChange", listenerFn);
+		window.addEventListener('ACheckin.NavigationChange', listenerFn);
 
 		return () => {
-			window.removeEventListener("ACheckin.NavigationChange", listenerFn);
+			window.removeEventListener('ACheckin.NavigationChange', listenerFn);
 		};
 	}
 
@@ -196,10 +193,10 @@ class ACheckinSDK {
 			callback();
 		};
 
-		window.addEventListener("ACheckin.ShakeEvent", listenerFn);
+		window.addEventListener('ACheckin.ShakeEvent', listenerFn);
 
 		return () => {
-			window.removeEventListener("ACheckin.ShakeEvent", listenerFn);
+			window.removeEventListener('ACheckin.ShakeEvent', listenerFn);
 		};
 	}
 
@@ -209,7 +206,7 @@ class ACheckinSDK {
 	static showBottomTabs(): Promise<boolean> {
 		ACheckinSDK.validInitSDK();
 
-		return window.ACheckin.handleSDK("showBottomTabs");
+		return window.ACheckin.handleSDK('showBottomTabs');
 	}
 
 	/**
@@ -218,7 +215,7 @@ class ACheckinSDK {
 	static hideBottomTabs(): Promise<boolean> {
 		ACheckinSDK.validInitSDK();
 
-		return window.ACheckin.handleSDK("hideBottomTabs");
+		return window.ACheckin.handleSDK('hideBottomTabs');
 	}
 
 	/**
@@ -227,7 +224,7 @@ class ACheckinSDK {
 	static isCheckedIn(): Promise<boolean> {
 		ACheckinSDK.validInitSDK();
 
-		return window.ACheckin.handleSDK("isCheckedIn");
+		return window.ACheckin.handleSDK('isCheckedIn');
 	}
 
 	/**
@@ -236,7 +233,7 @@ class ACheckinSDK {
 	static getCurrentLocation(): Promise<Location> {
 		ACheckinSDK.validInitSDK();
 
-		return window.ACheckin.handleSDK("getCurrentLocation");
+		return window.ACheckin.handleSDK('getCurrentLocation');
 	}
 
 	/**
@@ -246,8 +243,8 @@ class ACheckinSDK {
 	static shareScreen(message: string) {
 		ACheckinSDK.validInitSDK();
 
-		return window.ACheckin.handleSDK("shareScreen", {
-			message: message
+		return window.ACheckin.handleSDK('shareScreen', {
+			message: message,
 		});
 	}
 
@@ -258,10 +255,10 @@ class ACheckinSDK {
 	static setLocalNotification(options: { title: string; body: string; schedule_time?: number }) {
 		ACheckinSDK.validInitSDK();
 
-		return window.ACheckin.handleSDK("setLocalNotification", {
+		return window.ACheckin.handleSDK('setLocalNotification', {
 			title: options.title,
 			body: options.body,
-			...(options.schedule_time && { schedule_time: options.schedule_time })
+			...(options.schedule_time && { schedule_time: options.schedule_time }),
 		});
 	}
 
@@ -271,13 +268,15 @@ class ACheckinSDK {
 	static vibrate(): Promise<boolean> {
 		ACheckinSDK.validInitSDK();
 
-		return window.ACheckin.handleSDK("vibrate");
+		return window.ACheckin.handleSDK('vibrate');
 	}
 
 	/**
 	 * Leader Checkin
 	 */
-	static leaderCheckin(options: { staff_id }): Promise<{
+	static leaderCheckin(options: {
+		staff_id;
+	}): Promise<{
 		id: string;
 		timestamp: number;
 		date: number;
@@ -291,9 +290,18 @@ class ACheckinSDK {
 		};
 	}> {
 		ACheckinSDK.validInitSDK();
-		return window.ACheckin.handleSDK("leaderCheckin", {
+		return window.ACheckin.handleSDK('leaderCheckin', {
 			staff_id: options.staff_id,
 		});
+	}
+
+	/**
+	 * Get Current Api Domain
+	 */
+	static getCurrentDomain(): Promise<string> {
+		ACheckinSDK.validInitSDK();
+
+		return window.ACheckin.handleSDK('getCurrentDomain');
 	}
 }
 
