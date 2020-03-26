@@ -10,8 +10,10 @@ Giới thiệu ACheckin SDK
 
 - [Yêu cầu](#-yêu-cầu)
 - [Cài đặt](#-cài-đặt)
-- [Khởi chạy ứng dụng](#-khởi-chạy-ứng-dụng)
-- [Phát triển ứng dụng](#phát-triển-ứng-dụng)
+- [Chạy trên ACheckin](#-khởi-chạy-ứng-dụng)
+- [Phát triển ứng dụng](#-phát-triển-ứng-dụng)
+- [Phát hành](#-phát-hành-ứng-dụng)
+- [API](#-api)
 
 ## 📋 Yêu cầu
 
@@ -55,6 +57,25 @@ Bạn có thể cài đặt bằng cú pháp
 
 - `npm install acheckin-sdk` hoặc
 - `yarn add acheckin-sdk`
+
+Sau đó, tạo file `config.json` ở thư mục public của dự án mà bạn có thể xem với url `http://your-ip-address/config.json`
+
+```json
+{
+	"app_name": "tên-app-của-bạn",
+	"app_id": "acheckin.miniapp.template",
+	"package_name": "acheckin.miniapp.template",
+	"app_flashscreen": "acheckin.png",
+	"display": "fullscreen",
+	"app_type": "personal", // hoặc "workspace"
+	"developer_email": "dev@acheckin.vn",
+	"developer_name": "Developer",
+	"version": "0.0.1",
+	"main": "index.html",
+	"use_scroll": false,
+	"permissions": ["basic_info"]
+}
+```
 
 ### 🔖 Thêm ACheckin SDK như một thư viện JS
 
@@ -113,3 +134,24 @@ try {
 Chúc mừng, bạn đã lấy được thông tin cơ bản của người dùng.
 
 Hãy [Quét mã QR](#-khởi-chạy-ứng-dụng) trên ACheckin nhé!
+
+## 🎉 Phát hành ứng dụng
+
+Để phát hành ứng dụng trên ACheckin, bạn cần đăng kí một tài khoản tại [ACheckin Connect](https://connect.acheckin.io).
+
+### Với các ứng dụng dùng ACheckin CLI
+
+- Đăng nhập với CLI `acheckin login`
+
+- Build và gửi bản build `acheckin build`
+
+### Với các ứng dụng NPM / Yarn-supported
+
+- Build ứng dụng `yarn build` hoặc `npm build`
+- Nén folder `build` và upload file zip lên ACheckin Connect
+
+### Với các ứng dụng khác
+
+- Nén toàn bộ file chạy ứng dụng và upload file zip lên ACheckin Connect
+
+## 📖 API
