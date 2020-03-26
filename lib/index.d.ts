@@ -4,13 +4,14 @@ interface UserInfo {
     picture: string;
     email: string;
     birthday: string;
-    gender: 'F' | 'M';
+    gender: "F" | "M";
 }
 export interface UserPersonalInfo extends UserInfo {
     current_workspace: string;
 }
 export interface UserWorkspaceInfo extends UserInfo {
     is_owner: boolean;
+    is_leader: boolean;
 }
 export interface DeviceInfo {
     device_id: string;
@@ -67,21 +68,15 @@ declare class ACheckinSDK {
         schedule_time?: number;
     }): Promise<any>;
     static vibrate(): Promise<boolean>;
-    static leaderCheckin(options: {
-        staff_id: any;
-    }): Promise<{
-        id: string;
-        timestamp: number;
-        date: number;
-        speak_checkin?: string;
-        staff?: {
-            id?: string;
-            email?: string;
-            avatar?: string;
-            name?: string;
-            acheckin_user_phone_number?: string;
-        };
-    }>;
     static getCurrentDomain(): Promise<string>;
+    static getStaffOfLeader(offset: number, limit: number): Promise<{
+        total: number;
+        data: {
+            id: string;
+            name: string;
+            picture: string;
+            email: string;
+        }[];
+    }>;
 }
 export { ACheckinSDK };
