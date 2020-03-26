@@ -13,6 +13,7 @@ export interface UserPersonalInfo extends UserInfo {
 
 export interface UserWorkspaceInfo extends UserInfo {
 	is_owner: boolean;
+	is_leader: boolean;
 }
 
 export interface DeviceInfo {
@@ -272,36 +273,33 @@ class ACheckinSDK {
 	}
 
 	/**
-	 * Leader Checkin
-	 */
-	static leaderCheckin(options: {
-		staff_id;
-	}): Promise<{
-		id: string;
-		timestamp: number;
-		date: number;
-		speak_checkin?: string;
-		staff?: {
-			id?: string;
-			email?: string;
-			avatar?: string;
-			name?: string;
-			acheckin_user_phone_number?: string;
-		};
-	}> {
-		ACheckinSDK.validInitSDK();
-		return window.ACheckin.handleSDK('leaderCheckin', {
-			staff_id: options.staff_id,
-		});
-	}
-
-	/**
 	 * Get Current Api Domain
 	 */
 	static getCurrentDomain(): Promise<string> {
 		ACheckinSDK.validInitSDK();
 
 		return window.ACheckin.handleSDK('getCurrentDomain');
+	}
+
+	/**
+	 * Get Staff Of Leader
+	 *  
+	 * @param offset 
+	 * @param limit 
+	 */
+	static getStaffOfLeader(offset: number, limit: number): Promise<{
+		total: number
+		data: {
+			id: string
+			name: string
+			picture: string
+			email: string
+		}[]
+	}> {
+		ACheckinSDK.validInitSDK();
+		return window.ACheckin.handleSDK('getStaffOfLeader', {
+			offset, limit
+		});
 	}
 }
 
