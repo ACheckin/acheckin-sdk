@@ -1,6 +1,6 @@
 {
 	"name": "acheckin-sdk",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"directories": {
 		"lib": "lib"
 	},
@@ -20,7 +20,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/ACheckin/react-sdk.git"
+		"url": "git+https://github.com/ACheckin/acheckin-sdk.git"
 	},
 	"keywords": [
 		"acheckin",
@@ -30,7 +30,7 @@
 	],
 	"license": "ISC",
 	"bugs": {
-		"url": "https://github.com/ACheckin/react-sdk/issues"
+		"url": "https://github.com/ACheckin/acheckin-sdk/issues"
 	},
-	"homepage": "https://github.com/ACheckin/react-sdk#readme"
+	"homepage": "https://github.com/ACheckin/acheckin-sdk#readme"
 }
