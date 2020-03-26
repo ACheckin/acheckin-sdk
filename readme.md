@@ -1,29 +1,38 @@
 # ACheckin SDK
 
+Giới thiệu ACheckin SDK
+
 ## Mục lục
 
+- [Yêu cầu](#📋-Yêu-cầu)
+- [Cài đặt](#cài-đặt)
+
 ## 📋 Yêu cầu
+
+- Ứng dụng ACheckin: https://acheckin.vn/
+- NodeJS & NPM (khuyên dùng) hoặc
+- dự án Web có thể chạy độc lập không cần cài đặt lên server
 
 ## 🛠 Cài đặt
 
 Chúng tôi hỗ trợ nhà phát triển có thể tạo mới một ứng dụng chạy trên nền tảng ACheckin với nhiều cách khác nhau. Hãy lựa chọn một phương án mà bạn yêu thích.
 
-### Bắt đầu một dự án mới (khuyên dùng)
+### 🚀 Bắt đầu một dự án mới (khuyên dùng)
 
 Bạn có thể khởi tạo một ứng dụng mới hoàn toàn bằng công cụ ACheckin CLI do chúng tôi cung cấp.
 
 Chú ý: ứng dụng được viết trên nền ReactJS.
 
-1. #### Cài đặt CLI:
+1. #### Cài đặt CLI
 
    `npm install acheckin`
 
-2. #### Tạo dự án mới:
+2. #### Tạo dự án mới
 
    `acheckin init MyMiniApp`<br>
    `acheckin init MyMiniApp --bundle_id com.example.miniapp --template ts --ws`<br>
 
-   ##### Cú pháp:
+   ##### Cú pháp
 
    - `--template [js|ts|html]` tạo project theo template javascript react (defaul) | typescript react | html
    - `--bundle_id [your_bundle_id]` cài đặt bundle ID của app
@@ -32,7 +41,7 @@ Chú ý: ứng dụng được viết trên nền ReactJS.
 3. #### Chúc mừng, bạn đã khởi tạo thành công!
    Nhập lệnh `cd MyMiniApp && acheckin run` và dùng ACheckin trên điện thoại quét mã QR được tạo trên Terminal.
 
-### Thêm ACheckin SDK vào dự án NPM / Yarn-supported có sẵn
+### 📚 Thêm ACheckin SDK vào dự án NPM / Yarn-supported có sẵn
 
 ACheckin SDK có thể được cài đặt như một thư viện cho các dự án dùng npm / yarn.
 
@@ -44,6 +53,8 @@ Bạn có thể cài đặt bằng cú pháp
 2. #### Chạy ứng dụng trên ACheckin
 
 - tạo mã QR code với định dạng `acheckin://app_dev?h=[your_ip_address]&p=[port]` và quét mã này bằng ACheckin
-- sử dụng [ACheckin CLI](#cai-dat-cli) với cú pháp `acheckin qr`
+- sử dụng [ACheckin CLI](#cài-đặt-cli) với cú pháp `acheckin qr`
 
-### Thêm ACheckin SDK như một thư viện JS
+### 🔖 Thêm ACheckin SDK như một thư viện JS
+
+Sẽ cập nhật sớm
