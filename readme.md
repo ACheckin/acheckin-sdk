@@ -13,7 +13,7 @@ Giới thiệu ACheckin SDK
 - [Chạy trên ACheckin](#-khởi-chạy-ứng-dụng)
 - [Phát triển ứng dụng](#-phát-triển-ứng-dụng)
 - [Phát hành](#-phát-hành-ứng-dụng)
-- [API](#-api)
+- [API Reference](#-api-reference)
 
 ## 📋 Yêu cầu
 
@@ -154,4 +154,18 @@ Hãy [Quét mã QR](#-khởi-chạy-ứng-dụng) trên ACheckin nhé!
 
 - Nén toàn bộ file chạy ứng dụng và upload file zip lên ACheckin Connect
 
-## 📖 API
+## 📖 API Reference
+
+- `setHeadererTitle(string)` -> `Promise<any>` - đặt title cho header của ứng dụng
+- `getAccessToken()` -> `Promise<string>` - lấy accesstoken
+- `getUserPersonalInfo(array)` -> `Promise<UserInfo>` - lấy thông tin user public (personal)
+
+```
+object UserInfo { id, name, picture, email, birthday, gender }
+```
+
+- `getUserWorkspaceInfo(array)` -> `Promise<UserWorkspaceInfo>` - lấy thông tin user trong workspace
+
+```
+object UserInfo { id, name, picture, email, birthday, gender, is_owner, is_leader, current_workspace }
+```
