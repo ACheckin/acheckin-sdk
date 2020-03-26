@@ -4,8 +4,8 @@ Giới thiệu ACheckin SDK
 
 ## Mục lục
 
-- [Yêu cầu](#📋-Yêu-cầu)
-- [Cài đặt](#cài-đặt)
+- [Yêu cầu](#-yêu-cầu)
+- [Cài đặt](#-cài-đặt)
 
 ## 📋 Yêu cầu
 
