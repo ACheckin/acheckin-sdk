@@ -160,12 +160,81 @@ Hãy [Quét mã QR](#-khởi-chạy-ứng-dụng) trên ACheckin nhé!
 - `getAccessToken()` -> `Promise<string>` - lấy accesstoken
 - `getUserPersonalInfo(array)` -> `Promise<UserInfo>` - lấy thông tin user public (personal)
 
-```
-object UserInfo { id, name, picture, email, birthday, gender }
+```typescript
+interface UserInfo {
+	id: string;
+	name: string;
+	picture: string;
+	email: string;
+	birthday: string;
+	gender: "F" | "M";
+}
 ```
 
 - `getUserWorkspaceInfo(array)` -> `Promise<UserWorkspaceInfo>` - lấy thông tin user trong workspace
 
+```typescript
+interface UserWorkspaceInfo {
+	id: string;
+	name: string;
+	picture: string;
+	email: string;
+	birthday: string;
+	gender: "F" | "M";
+	is_owner: boolean;
+	is_leader: boolean;
+	current_workspace: string;
+}
 ```
-object UserInfo { id, name, picture, email, birthday, gender, is_owner, is_leader, current_workspace }
+
+- `setItem(key: string, value: string)` -> `Promise<boolean>` - lưu string vào bộ nhớ theo key
+- `getItem(key: string)` -> `Promise<string>` - lấy value theo key
+
+- `getDeviceInfo(Array<keyof DeviceInfo>)` -> `Promise<DeviceInfo>` - thông tin thiết bị
+
+```typescript
+interface DeviceInfo {
+	device_id: string;
+	device_name: string;
+	device_platform: string;
+	bundle_id: string;
+	device_os_version: string;
+	is_tablet: boolean;
+	ip_address: string;
+	battery_level: number;
+	battery_changing: boolean;
+	device_mac_address: string;
+	device_manufacturer: string;
+	device_brand: string;
+	wifi_name: string;
+	is_wifi: boolean;
+	has_network: string;
+	is_mobile_data: boolean;
+}
 ```
+
+- `readBarCode()` -> `Promise<string>` - đọc QR / bar code
+
+- `addShakeEventListener(callback)` - xử lý event lắc thiết bị
+
+- `showBottomTabs` - hiện thanh công cụ ở dưới màn hình
+- `hideBottomTabs` - ẩn thanh công cụ ở dưới màn hình
+
+- `isCheckedIn` -> `Promise<boolean>` - kiểm tra user đã checkin vào workspace hay chưa
+
+- `getCurrentLocation` -> `Promise<Location>` - lấy vị trí hiện tại của user
+
+```typescript
+interface Location {
+	latitude: number;
+	longitude: number;
+}
+```
+
+- `shareScreen(string)` - chụp màn hình và chia sẻ với message tùy chọn
+
+- `setLocalNotification({title, body, schedule_time: number})` - tạo và lên lịch hiển thị local notification
+
+- `vibrate` - rung thiết bị
+
+- `getStaffOfLeader({offset, limit})` -> `Promise<{total, data: {id, name, picture, email}}>` - lấy danh sách nhân viên
