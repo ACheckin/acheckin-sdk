@@ -33,7 +33,7 @@ Chú ý: ứng dụng được viết trên nền ReactJS.
 
 1. #### Cài đặt CLI
 
-   `npm install acheckin`
+   `npm install acheckin -global`
 
 2. #### Tạo dự án mới
 
