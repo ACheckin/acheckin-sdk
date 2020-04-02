@@ -135,6 +135,18 @@ Chúc mừng, bạn đã lấy được thông tin cơ bản của người dùn
 
 Hãy [Quét mã QR](#-khởi-chạy-ứng-dụng) trên ACheckin nhé!
 
+### Chạy ứng dụng trên Chrome
+
+ACheckin hỗ trợ nhà phát triển có thể test ứng dụng trực tiếp trên trình duyệt với Chrome Extension. Bạn có thể cài đặt bản Beta bằng cách sau
+
+- Tải ACheckin Mini App Emulator [tại đây](https://drive.google.com/drive/folders/14FxwwZ-OcZvktWlyqzEeXlJhExm9zgSQ?usp=sharing)
+- Giải nén và xem hướng dẫn [tại đây](https://webkul.com/blog/how-to-install-the-unpacked-extension-in-chrome/)
+- Chạy ứng dụng `acheckin run` và chọn biểu tượng ACheckin trên trình duyệt
+
+[Xem ảnh lớn hơn](https://drive.google.com/open?id=1Xpecdv0VgSWj1TDQQROU4ib6hUhi_AkN)
+
+![ACheckin Emulator](https://i.ibb.co/LYSkC3y/Screen-Shot-2020-04-02-at-11-54-26.png)
+
 ## 🎉 Phát hành ứng dụng
 
 Để phát hành ứng dụng trên ACheckin, bạn cần đăng kí một tài khoản tại [ACheckin Connect](https://connect.acheckin.io).
