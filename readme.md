@@ -38,13 +38,12 @@ Chú ý: ứng dụng được viết trên nền ReactJS.
 2. #### Tạo dự án mới
 
    `acheckin init MyMiniApp`<br>
-   `acheckin init MyMiniApp --bundle_id com.example.miniapp --template ts --ws`<br>
+   `acheckin init MyMiniApp --id com.example.miniapp --template ts`<br>
 
    ##### Cú pháp
 
    - `--template [js|ts|html]` tạo project theo template javascript react (defaul) | typescript react | html
-   - `--bundle_id [your_bundle_id]` cài đặt bundle ID của app
-   - `--ws` cài đặt kiểu app là workspace
+   - `--id [your_bundle_id]` cài đặt app ID
 
 3. #### Chúc mừng, bạn đã khởi tạo thành công!
    Nhập lệnh `cd MyMiniApp && acheckin run` và dùng ACheckin trên điện thoại quét mã QR được tạo trên Terminal.
@@ -64,12 +63,8 @@ Sau đó, tạo file `config.json` ở thư mục public của dự án mà bạ
 {
 	"app_name": "tên-app-của-bạn",
 	"app_id": "acheckin.miniapp.template",
-	"package_name": "acheckin.miniapp.template",
 	"app_flashscreen": "acheckin.png",
 	"display": "fullscreen",
-	"app_type": "personal", // hoặc "workspace"
-	"developer_email": "dev@acheckin.vn",
-	"developer_name": "Developer",
 	"version": "0.0.1",
 	"main": "index.html",
 	"use_scroll": false,
