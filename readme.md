@@ -144,7 +144,7 @@ ACheckin hỗ trợ nhà phát triển có thể test ứng dụng trực tiếp
 
 ## 🎉 Phát hành ứng dụng
 
-Để phát hành ứng dụng trên ACheckin, bạn cần đăng kí một tài khoản tại [ACheckin Connect](https://connect.acheckin.io).
+Để phát hành ứng dụng trên ACheckin, bạn cần đăng kí một tài khoản tại [ACheckin Connect](https://developer.acheckin.io).
 
 ### Với các ứng dụng dùng ACheckin CLI
 
