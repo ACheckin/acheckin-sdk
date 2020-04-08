@@ -315,6 +315,30 @@ class ACheckinSDK {
 			limit
 		});
 	}
+
+	/**
+	 * Play Audio
+	 * @param url
+	 * @param options
+	 */
+	static playAudio(
+		url: string,
+		options: { background: boolean }
+	): Promise<boolean> {
+		ACheckinSDK.validInitSDK();
+		return window.ACheckin.handleSDK("playAudio", {
+			url,
+			options,
+		});
+	}
+
+	/**
+	 * Stop Audio
+	 */
+	static stopAudio(): Promise<boolean> {
+		ACheckinSDK.validInitSDK();
+		return window.ACheckin.handleSDK("stopAudio", {});
+	}
 }
 
 export { ACheckinSDK };
