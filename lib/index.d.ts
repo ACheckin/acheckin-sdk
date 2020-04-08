@@ -78,5 +78,9 @@ declare class ACheckinSDK {
             email: string;
         }[];
     }>;
+    static playAudio(url: string, options: {
+        background: boolean;
+    }): Promise<boolean>;
+    static stopAudio(): Promise<boolean>;
 }
 export { ACheckinSDK };
