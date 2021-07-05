@@ -291,6 +291,12 @@ class ACheckinSDK {
 		return window.ACheckin.handleSDK("getCurrentDomain");
 	}
 
+	static openUrl(url: string): Promise<string> {
+		return window.ACheckin.handleSDK("openUrl", {
+			url
+		});
+	}
+
 	/**
 	 * Get Staff Of Leader
 	 *
