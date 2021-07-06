@@ -69,7 +69,7 @@ declare class ACheckinSDK {
     }): Promise<any>;
     static vibrate(): Promise<boolean>;
     static getCurrentDomain(): Promise<string>;
-    static openUrl(url: string): void;
+    static openUrl(url: string): Promise<string>;
     static getStaffOfLeader(offset: number, limit: number): Promise<{
         total: number;
         data: {
