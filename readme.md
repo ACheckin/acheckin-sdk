@@ -245,3 +245,7 @@ interface Location {
 - `vibrate` - rung thiết bị
 
 - `getStaffOfLeader({offset, limit})` -> `Promise<{total, data: {id, name, picture, email}}>` - lấy danh sách nhân viên
+
+- `playAudio({url: string, title?: string, artwork?: string, background?: boolean})` -> `Promise<boolean>` - Phát nhạc từ Mini App và cho phép tiếp tục phát khi app ở background (background = true)
+
+- `stopAudio()` -> `Promise<boolean>` - Dừng phát nhạc 
